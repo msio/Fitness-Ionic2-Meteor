@@ -6,10 +6,6 @@ Fitness App is dedicated to people who are looking for motivation to train in th
 
 Lots of people want to train in the gym but they are not enough motivated to really go there by themselves or there are already fitness enthusiasts who want to get better and need support by working out. The most challenge for everybody is to find somebody who wants to train on the same time, in the same gym and has similar workouts. 
 
-## Why use this App
-
-The App is very intuitive and easy to use because of platform specific (Android or IOS ) UI design. To find someone is possible just with few steps and every user interaction is responded with an appropriate feedback.         
-
 ## Screenshots
 
 ### Android
