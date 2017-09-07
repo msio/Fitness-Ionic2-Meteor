@@ -1,3 +1,6 @@
+
+[![Build Status](https://travis-ci.org/msio777/ionic-unit-testing-example.svg?branch=master)](https://travis-ci.org/msio777/ionic-unit-testing-example)
+
 # Fitness Ionic2 Meteor App
 
 Fitness App is dedicated to people who are looking for motivation to train in the gym or support by similar workouts. It also important to find somebody who is free on the same time and wants to train in the same gym. Fitness App helps match those people together. 
