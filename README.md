@@ -1,4 +1,4 @@
-# Fitness Ionic2 App 
+# Fitness-Ionic2-Meteor App
 
 Fitness App is dedicated to people who are looking for motivation to train in the gym or support by similar workouts. It also important to find somebody who is free on the same time and wants to train in the same gym. Fitness App helps match those people together. 
 
@@ -19,7 +19,26 @@ Lots of people want to train in the gym but they are not enough motivated to rea
 <img src="https://github.com/msio777/Fitness-Ionic2/blob/master/screens/screen4.png" width="300">
 <img src="https://github.com/msio777/Fitness-Ionic2/blob/master/screens/screen5.png" width="300"></span>
 
-## Technology
+## Prerequisites
 
-The source code is private. This is just overview of the project that is still in development 
-Fitness App (client) is written in [Ionic 2](http://ionicframework.com/docs/intro/installation/) Framework and API is written with [Meteor.js](https://www.meteor.com/) 
+ * Node 6.9.0 or higher 
+ * NPM 3 or higher
+ * [mongodb](https://www.mongodb.com/download-center?_ga=2.88441819.1504749810.1504631865-250124745.1504631865#community)
+ * [meteor](https://www.meteor.com/install)
+ * [ionic](http://ionicframework.com/docs/intro/installation/) 
+
+## Install and Start     
+ 
+ ### Api
+ 
+  * from root folder `cd api`
+  * `npm install`
+  * `chmod 777 run.sh`
+  * `npm start` (run.sh script is tested on osx)
+  *  to use [Cloudinary](http://cloudinary.com/), [Faceabook](https://developers.facebook.com/), [One Signal](https://documentation.onesignal.com/docs) - rename `private/development.settings.json.example` to `private/development.settings.json` and set values  
+     
+ ### Client
+ 
+ * from root folder `cd client`      
+ * `npm run install-all` (installs npm and meteor api dependencies for client (look into meteor-client.config.json) also [here](https://github.com/Urigo/meteor-client-bundler) )
+ * `npm start` (runs in browser)
