@@ -1,6 +1,17 @@
-# Fitness-Ionic2-Meteor App
+# Fitness Ionic2 Meteor App
 
 Fitness App is dedicated to people who are looking for motivation to train in the gym or support by similar workouts. It also important to find somebody who is free on the same time and wants to train in the same gym. Fitness App helps match those people together. 
+
+## Table of Contents ##
+
+* [Motivation](#motivation)
+* [Screenshots](#screenshots)
+    * [Android](#android)
+    * [IOS](#ios)
+* [Prerequisites](#prerequisites)
+* [Install and Start](#install-and-start)
+    * [Api](#api)
+    * [Client](#client)
 
 ## Motivation
 

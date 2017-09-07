@@ -59,8 +59,8 @@
     <plugin name="cordova-plugin-crop" spec="git+https://github.com/jeduan/cordova-plugin-crop.git" />
     <plugin name="cordova-plugin-device" spec="^1.1.6" />
     <plugin name="cordova-plugin-facebook4" spec="^1.9.1">
-        <variable name="APP_ID" value="1713562838859925" />
-        <variable name="APP_NAME" value="passionizer" />
+        <variable name="APP_ID" value="" />
+        <variable name="APP_NAME" value="" />
     </plugin>
     <plugin name="cordova-plugin-file" spec="^4.3.3" />
     <plugin name="cordova-plugin-file-transfer" spec="^1.6.3" />
@@ -68,8 +68,8 @@
         <variable name="GEOLOCATION_USAGE_DESCRIPTION" value=" " />
     </plugin>
     <plugin name="cordova-plugin-googlemaps" spec="git+https://github.com/mapsplugin/cordova-plugin-googlemaps.git#b22f73fb565989bd4724ee89545c01860692dbe0">
-        <variable name="API_KEY_FOR_IOS" value="AIzaSyDgbJ_KJ4bdVT0k6We9DvnWJAYOwBNnMFY" />
-        <variable name="API_KEY_FOR_ANDROID" value="AIzaSyDgbJ_KJ4bdVT0k6We9DvnWJAYOwBNnMFY" />
+        <variable name="API_KEY_FOR_IOS" value="" />
+        <variable name="API_KEY_FOR_ANDROID" value="" />
     </plugin>
     <plugin name="cordova-plugin-nativegeocoder" spec="^1.0.2" />
     <plugin name="cordova-plugin-splashscreen" spec="^4.0.3" />
