@@ -1,0 +1,12 @@
+{
+  "runtime": {
+    "DDP_DEFAULT_CONNECTION_URL": "http://localhost:3000"
+  },
+  "import": [
+    "meteor-base",
+    "mongo",
+    "accounts-password",
+    "tracker",
+    "ground:db@2.0.0-rc.7"
+  ]
+}

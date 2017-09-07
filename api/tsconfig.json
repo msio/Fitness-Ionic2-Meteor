@@ -1,0 +1,30 @@
+{
+  "compilerOptions": {
+    "allowSyntheticDefaultImports": true,
+    "declaration": false,
+    "emitDecoratorMetadata": true,
+    "experimentalDecorators": true,
+    "target": "es5",
+    "lib": [
+      "es6",
+      "dom"
+    ],
+    "module": "commonjs",
+    "moduleResolution": "node",
+    "sourceMap": true,
+    "skipLibCheck": true,
+    "stripInternal": true,
+    "noImplicitAny": false
+  },
+  "exclude": [
+    "node_modules"
+  ],
+  "files": [
+    "typings.d.ts"
+  ],
+  "compileOnSave": false,
+  "angularCompilerOptions": {
+    "genDir": "aot",
+    "skipMetadataEmit": true
+  }
+}

@@ -1,0 +1,20 @@
+location-details {
+  .item-block .item-inner {
+    border-bottom: none !important;
+  }
+
+  .select-button {
+    padding: 0 7px;
+    .button {
+      height: 28px !important;
+      //TODO android
+      margin: 0
+    }
+  }
+
+  .item .label {
+    //TODO android
+    margin-top: 6px;
+    margin-bottom: 4px;
+  }
+}

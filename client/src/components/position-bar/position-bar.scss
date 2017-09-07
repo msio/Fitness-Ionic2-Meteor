@@ -1,0 +1,21 @@
+position-bar {
+  .position {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    color: #ffffff;
+    font-size: 13px;
+    .icon {
+      padding-right: 5px;
+    }
+  }
+  .position-spinner {
+    width: 18px;
+    height: 18px;
+  }
+  .position-toolbar {
+    min-height: 30px;
+    padding-left: 12px;
+    padding-right: 12px;
+  }
+}

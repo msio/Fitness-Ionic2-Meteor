@@ -1,0 +1,24 @@
+<ion-header>
+    <ion-navbar>
+        <ion-title>Gender</ion-title>
+    </ion-navbar>
+</ion-header>
+
+<ion-content>
+    <ion-list radio-group [(ngModel)]="gender">
+        <ion-item>
+            <ion-label>{{GENDER.WOMEN_AND_MEN.title}}</ion-label>
+            <ion-radio value="{{GENDER.WOMEN_AND_MEN.value}}"></ion-radio>
+        </ion-item>
+
+        <ion-item>
+            <ion-label>{{GENDER.WOMEN.title}}</ion-label>
+            <ion-radio value="{{GENDER.WOMEN.value}}"></ion-radio>
+        </ion-item>
+
+        <ion-item>
+            <ion-label>{{GENDER.MEN.title}}</ion-label>
+            <ion-radio value="{{GENDER.MEN.value}}"></ion-radio>
+        </ion-item>
+    </ion-list>
+</ion-content>

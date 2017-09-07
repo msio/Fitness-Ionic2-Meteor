@@ -1,0 +1,37 @@
+<ion-header>
+    <ion-navbar>
+        <ion-title></ion-title>
+    </ion-navbar>
+    <ion-toolbar>
+        <div class="membership-toolbar">
+            <div class="icon-name">
+                <img-loader src="{{membership.icon | iconUrl}}"></img-loader>
+                <span>{{membership.name}}</span>
+            </div>
+            <div class="icons">
+                <button class="more" ion-button icon-only clear>
+                    <ion-icon ios="ios-more" md="md-more"></ion-icon>
+                </button>
+            </div>
+        </div>
+        <button ion-button small round block (click)="findGymMembershipNextToYou()">Find {{membership.name}} next to
+            you
+        </button>
+    </ion-toolbar>
+</ion-header>
+<ion-content>
+    <position-bar *ngIf="!hidePositionBar" [currentPositionMode]="currentPositionMode" [isLoadingPosition]="isLoadingPosition" [positionDescription]="positionDescription"></position-bar>
+    <content-spinner [isLoading]="isContentLoading">
+        <ion-list *ngFor="let group of locations">
+            <ion-list-header>{{group.city}}</ion-list-header>
+            <ion-item *ngFor="let location of group.locations">
+                <ion-label>{{location.address.postalCode}} {{location.address.street}}</ion-label>
+                <ion-checkbox [(ngModel)]="location.selected"
+                              (ionChange)="check(location,group.locations)"></ion-checkbox>
+                <ion-note item-end *ngIf="positionAllowed">
+                    {{location.locDistance | number: PIPE_DISTANCE_FORMAT}} km
+                </ion-note>
+            </ion-item>
+        </ion-list>
+    </content-spinner>
+</ion-content>

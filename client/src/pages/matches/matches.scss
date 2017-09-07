@@ -1,0 +1,53 @@
+page-matches {
+  .item-user-more {
+    height: 100% !important;
+    padding-right: 8px !important;
+  }
+  .item-wrapper {
+    border-bottom: 0.55px solid #c8c7cc;
+  }
+  /*.list-ios .item-block .item-inner {
+    border-right: 5px solid #26db46 !important;
+    padding-right: 3px;
+
+  }
+  */
+  .segment-button {
+    z-index: 0;
+  }
+  .segment-underlined {
+    background-color: red;
+    height: 2px;
+    width: 100%;
+  }
+  .poke-badge {
+    position: absolute;
+    width: 10px;
+    height: 10px;
+    //TODO use variable like badges
+    background-color: red;
+    border-radius: 50%;
+    bottom: 20px;
+    border: 1px solid #ffffff;
+  }
+  .segment-activated {
+    /*.segment-badge {
+      border: 1px solid $toolbar-background;
+      width: 8px;
+      height: 8px;
+    }*/
+  }
+  .segment-badge {
+    width: 9px;
+    height: 9px;
+    border: none;
+    z-index: 1000 !important;
+    bottom: 4px;
+  }
+  .left-segment-badge {
+    left: 21px;
+  }
+  .right-segment-badge {
+    left: 15px;
+  }
+}

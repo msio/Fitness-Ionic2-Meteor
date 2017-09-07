@@ -1,0 +1,19 @@
+<div class="container">
+    <div class="top-part">
+        <div class="icon-name">
+            <img-loader class="icon" src="{{data?.membership.icon | iconUrl}}"></img-loader>
+            <span>{{data?.membership.name}}</span>
+        </div>
+        <button class="close" ion-button icon-only clear (click)="close()">
+            <ion-icon ios="ios-close" md="md-close"></ion-icon>
+        </button>
+    </div>
+    <div class="bottom-part">
+        <span class="row address">{{data?.postalCode}} {{data?.address.street}}, {{data?.address.city}}</span>
+        <div class="row distance">
+            <custom-icon class="distance-icon" set="free" name="distance"></custom-icon>
+            <span>{{data?.locDistance | number: PIPE_DISTANCE_FORMAT}} km</span>
+        </div>
+    </div>
+</div>
+<button class="select" ion-button block (click)="selectLocation()">Select</button>

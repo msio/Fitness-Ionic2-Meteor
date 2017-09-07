@@ -1,0 +1,32 @@
+<ion-header>
+    <ion-navbar>
+        <!--<ion-segment mio-small [(ngModel)]="viewType">
+            <ion-segment-button value="{{VIEW_TYPE_ENUM.MAP_VIEW}}">
+                <ion-icon ios="ios-map" md="md-map"></ion-icon>
+            </ion-segment-button>
+            <ion-segment-button value="{{VIEW_TYPE_ENUM.LIST_VIEW}}">
+                <ion-icon ios="ios-people" md="md-people"></ion-icon>
+            </ion-segment-button>
+        </ion-segment>-->
+    </ion-navbar>
+    <ion-toolbar *ngIf="isOneLocation" class="location-toolbar">
+        <div class="membership-toolbar">
+            <div class="icon-name">
+                <img-loader src="{{oneLocation.membership.icon | iconUrl}}"></img-loader>
+                <span>{{oneLocation.membership.name}} -</span>
+                <span>{{oneLocation.location.address | locationAddress}}</span>
+            </div>
+            <!--<div class="icons">
+                <button class="more" ion-button icon-only clear>
+                    <ion-icon ios="ios-more" md="md-more"></ion-icon>
+                </button>
+            </div>-->
+        </div>
+    </ion-toolbar>
+</ion-header>
+
+<ion-content>
+    <div [hidden]="viewType !== VIEW_TYPE_ENUM.MAP_VIEW" id="map"></div>
+    <list-view [userPool]="userPool" [isLoading]="isUserPoolLoading" [isOneLocation]="isOneLocation"
+               [hidden]="viewType !== VIEW_TYPE_ENUM.LIST_VIEW "></list-view>
+</ion-content>

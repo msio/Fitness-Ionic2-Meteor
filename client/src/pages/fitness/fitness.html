@@ -1,0 +1,56 @@
+<ion-header>
+    <ion-navbar>
+        <ion-title>Fitness</ion-title>
+        <ion-buttons end>
+            <button ion-button (click)="search()" [disabled]="isSearchingPosition">Search</button>
+        </ion-buttons>
+    </ion-navbar>
+    <ion-toolbar *ngIf="showConnectivityStatus" class="connectivity-status-toolbar" color="danger">
+        <ion-title>{{connectivityStatus}}</ion-title>
+    </ion-toolbar>
+</ion-header>
+<ion-content>
+    <ion-list>
+        <ion-list-header>Where</ion-list-header>
+        <button class="membership-block" ion-item (click)="goToMembershipSelector()">
+            <selected-mem-loc [membership]=userSearchParams.membership></selected-mem-loc>
+        </button>
+    </ion-list>
+    <ion-list>
+        <ion-list-header>Workout</ion-list-header>
+        <button class="workout-block" ion-item (click)="goToWorkoutSelector()">
+            <ng-template [ngIf]="userSearchParams.exercises.length !== 0">
+                <button ion-button readonly
+                        *ngFor="let exercise of userSearchParams.exercises">{{exercise.name}}</button>
+            </ng-template>
+            <ng-template [ngIf]="userSearchParams.exercises.length === 0">
+                All Exercises
+            </ng-template>
+        </button>
+    </ion-list>
+    <ion-list>
+        <ion-list-header>When</ion-list-header>
+        <button ion-item (click)="goToStartActivitySelector()">
+            <ion-label>Start</ion-label>
+            <div item-content>{{userSearchParams.activityStart | activityStartFormat}}</div>
+        </button>
+    </ion-list>
+    <ion-list>
+        <ion-list-header>Who</ion-list-header>
+        <button ion-item (click)="gotToGenderSelector()">
+            <ion-label>Gender</ion-label>
+            <div item-content>{{userSearchParams.gender | constantTitle: GENDER}}</div>
+        </button>
+        <ion-item class="range-label">
+            <ion-label>Age</ion-label>
+            <div item-content>
+                <ion-label>{{userSearchParams.ageRange.lower}} - {{userSearchParams.ageRange.upper}}</ion-label>
+            </div>
+        </ion-item>
+        <ion-item>
+            <!--TODO dont allow same lower and upper range-->
+            <ion-range class="range" [(ngModel)]="userSearchParams.ageRange" step="3" dualKnobs="true" min="18"
+                       max="65"></ion-range>
+        </ion-item>
+    </ion-list>
+</ion-content>

@@ -1,0 +1,20 @@
+page-settings {
+  .position-icon-description {
+    display: flex;
+    .icon {
+      padding-right: 5px;
+    }
+  }
+  .current-position {
+    display: flex;
+    align-items: center;
+    .current-position-icon {
+      padding-right: 7px;
+    }
+  }
+  .position-description {
+    overflow: hidden;
+    font-size: $header-ios-font-size-description !important;
+    text-overflow: ellipsis;
+  }
+}

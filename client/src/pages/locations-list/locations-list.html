@@ -1,0 +1,19 @@
+<ion-content>
+    <ion-list>
+        <button ion-item *ngFor="let location of locations" (click)="setLocation(location)">
+            <p><strong>{{location.membership.name}}</strong></p>
+            <p>{{location.postalCode}} {{location.address.street}}, {{location.address.city}}</p>
+            <p>{{location.locDistance | number: '1.0-1'}} km</p>
+        </button>
+    </ion-list>
+</ion-content>
+
+<ion-footer>
+    <ion-toolbar>
+        <ion-buttons end>
+            <button ion-button (click)="dismiss()">
+                Close
+            </button>
+        </ion-buttons>
+    </ion-toolbar>
+</ion-footer>

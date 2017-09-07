@@ -1,0 +1,65 @@
+<ion-content class="content">
+    <ion-fab left>
+        <button ion-fab color="white" navPop>
+            <ion-icon color="primary" ios="ios-arrow-back" md="md-arrow-back"></ion-icon>
+        </button>
+    </ion-fab>
+    <user-pictures-slider [readonly]="true" [user]="foundUser"></user-pictures-slider>
+    <div class="about">
+        <p class="name-age"><span class="name">{{foundUser.name.firstName}}</span>, {{foundUser.age}}</p>
+        <div class="bio" #bio>{{foundUser.about}}</div>
+        <div *ngIf="showAllBioButton" class="showAll" (click)="showAllBio()">
+            <span ion-text color="primary">Show All</span>
+        </div>
+    </div>
+    <div class="section-title">
+        <p>Where</p>
+        <div class="row-left-right">
+            <div class="location">
+                <div class="location-icon">
+                    <img-loader src="{{foundUser.membership.icon | iconUrl}}"></img-loader>
+                </div>
+                <div class="location-name">
+                    <p class="name">{{foundUser.membership.name}}</p>
+                    <p>{{foundUser.locAddress | locationAddress}}</p>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="section-title">
+        <p>Exercises</p>
+        <div *ngIf="foundUser.exercises.length !== 0">
+            <div class="exercise-icon"
+                 *ngFor="let exercise of foundUser.exercises"
+                 ion-button>{{exercise.name}}</div>
+        </div>
+        <span *ngIf="foundUser.exercises.length === 0">Not Defined</span>
+    </div>
+    <div class="section-title">
+        <p>Workout Start</p>
+        <span>{{foundUser | activityStartFormat:'user'}}</span>
+    </div>
+
+
+</ion-content>
+
+<ion-footer>
+    <button *ngIf="type === FOUND_USER_DETAILS_TYPE.POKE && !foundUser.poked" class="footer-button" ion-button
+            full (click)="poke()">
+        Workout {{foundUser.gender === 'male'? 'Him': 'Her'}}
+    </button>
+    <button *ngIf="type === FOUND_USER_DETAILS_TYPE.POKE && foundUser.poked" class="footer-button" ion-button
+            full color="poked">
+        You tried to workout {{foundUser?.gender === 'male'? 'Him': 'Her'}}
+    </button>
+    <button *ngIf="type === FOUND_USER_DETAILS_TYPE.MATCH && !foundUser.matched" class="footer-button"
+            ion-button
+            full (click)="confirmPoke()">
+        Confirm {{foundUser.gender === 'male'? 'Him': 'Her'}}
+    </button>
+    <button *ngIf="type === FOUND_USER_DETAILS_TYPE.MATCH && foundUser.matched" class="footer-button"
+            ion-button
+            full (click)="goToMessagePage()">
+        Write {{foundUser.gender === 'male'? 'Him': 'Her'}}
+    </button>
+</ion-footer>

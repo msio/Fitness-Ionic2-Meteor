@@ -1,0 +1,25 @@
+<ion-slides [style.height]="height+'px'" [pager]="pictures.length > 1"
+            (ionSlideWillChange)="onSlideChange()">
+    <ion-slide [style.width]="height+'px' " *ngFor="let pic of pictures;let index = index">
+        <div *ngIf="!pic.loaded" class="loading-container">
+            <ion-spinner></ion-spinner>
+        </div>
+        <div *ngIf="pic.set && pic.picture !== null">
+            <ion-fab class="remove-button" *ngIf="!readonly && pictures.length > 1 && index !== 0 && pic.loaded">
+                <button ion-fab (click)="showImageOptions(pic)">
+                    <ion-icon ios="ios-arrow-round-down" md="md-arrow-round-down"></ion-icon>
+                </button>
+            </ion-fab>
+            <img [style.height]="height+'px'" [hidden]="!pic.loaded" (load)="pic.loaded = true"
+                 [src]="pic.picture.url">
+        </div>
+        <div *ngIf="pic.picture === null">
+            <img [src]="userProfile | userProfilePicture" (load)="pic.loaded = true;">
+        </div>
+    </ion-slide>
+</ion-slides>
+<div *ngIf="!readonly" class="add-picture">
+    <button ion-button full (click)="addPicture()">
+        <ion-icon ios="ios-image" md="md-image"></ion-icon>
+    </button>
+</div>

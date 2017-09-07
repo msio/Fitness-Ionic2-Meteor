@@ -1,0 +1,16 @@
+<ion-header>
+    <ion-navbar>
+        <ion-title>{{user.profile.firstName}} {{user.profile.lastName}}</ion-title>
+    </ion-navbar>
+</ion-header>
+
+<ion-content>
+    <user-pictures-slider [user]="user" [readonly]="false"></user-pictures-slider>
+    <ion-list-header>About You</ion-list-header>
+    <ion-list>
+        <button ion-item detail-none (click)="goToAboutYou()">
+            <ion-textarea [(ngModel)]="user.profile.about" rows="3"
+                          readonly="true"></ion-textarea>
+        </button>
+    </ion-list>
+</ion-content>

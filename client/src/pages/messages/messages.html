@@ -1,0 +1,59 @@
+<ion-header>
+    <ion-navbar>
+        <ion-title>
+            <div class="header-profile-picture">
+                <img src="{{selectedChat.receiver | userProfilePicture}}">
+            </div>
+            <span class="name">{{selectedChat.receiver.firstName}}</span>
+        </ion-title>
+    </ion-navbar>
+</ion-header>
+
+<ion-content id="page-messages-content">
+    <div (swipe)="showCreatedAt($event)">
+        <div class="messages-day-group" *ngFor="let dayGroup of messagesDayGroups">
+            <div class="datetime"><span>{{dayGroup.timestamp | amDateFormat:APP_DATETIME_FORMAT}}</span>
+            </div>
+            <div class="messages">
+                <div *ngFor="let message of dayGroup.messages"
+                     [class]="'message message-' + message.ownership+' next-message-'+ message.nextOne"
+                     (click)="goToMore(message)">
+                    <div *ngIf="message.ownership === 'other'" class="profile-picture"><img
+                            src="{{selectedChat.receiver | userProfilePicture}}"></div>
+                    <div class="message-content">
+                        <span>{{message.content}}</span>
+                    </div>
+                    <div *ngIf="message.ownership === 'other'" class="filler"></div>
+                    <span [hidden]="createdAtHidden"
+                          class="createdAt">{{message.createdAt | amDateFormat:'HH:mm'}}</span>
+                    <ion-icon class="not-delivered-icon" *ngIf="message.status === MSG_DELIVERY_STATUS.NOT_DELIVERED"
+                              ios="ios-alert" md="md-alert" color="danger"></ion-icon>
+                </div>
+                <div *ngIf="dayGroup.isLastMine"
+                     class="delivery-status">
+                    <ion-spinner *ngIf="msgDeliveryStatus === MSG_DELIVERY_STATUS.SENDING" name="crescent"
+                                 class="spinner"></ion-spinner>
+                    <span *ngIf="msgDeliveryStatus === MSG_DELIVERY_STATUS.DELIVERED" class="status-title">Sent</span>
+                    <span *ngIf="msgDeliveryStatus === MSG_DELIVERY_STATUS.NOT_DELIVERED"
+                          class="status-title">Not Delivered</span>
+                </div>
+            </div>
+        </div>
+    </div>
+</ion-content>
+
+<ion-footer #footer>
+    <ion-toolbar color="light" class="messages-page-footer" position="bottom">
+        <ion-input [(ngModel)]="input" (keypress)="onInputKeypress($event)"
+                   class="message-editor"
+                   placeholder="Type a message"></ion-input>
+
+        <ion-buttons end>
+            <button [disabled]="sendButtonDisabled" ion-button color="primary" class="message-editor-button"
+                    (click)="send()">
+                Send
+            </button>
+        </ion-buttons>
+    </ion-toolbar>
+</ion-footer>
+

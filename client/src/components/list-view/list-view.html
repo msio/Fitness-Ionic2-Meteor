@@ -1,0 +1,32 @@
+<content-spinner [isLoading]="isContentLoading">
+    <ion-list>
+        <button ion-item detail-none class="item-user" [attr.poked]=user.poked *ngFor="let user of userPool"
+                (click)="goToFoundUserDetails(user)">
+            <ion-avatar item-left>
+                <!--if you use ion-img component img won't be shown second item-->
+                <img [src]="user | userProfilePicture"/>
+            </ion-avatar>
+            <div>
+                <h2>{{user.name.firstName}}</h2>
+                <p class="row">
+                    <ion-icon *ngIf="user.gender === 'male'" ios="ios-male" md="md-male"></ion-icon>
+                    <ion-icon *ngIf="user.gender === 'female'" ios="ios-female" md="md-female"></ion-icon>
+                    <span>{{user.age}}</span>
+                </p>
+                <p class="start-activity row">
+                    <ion-icon ios="ios-time-outline" md="md-time"></ion-icon>
+                    <!--TODO use pipe-->
+                    <span>{{user | activityStartFormat: 'user'}}</span>
+                </p>
+                <p>
+                    <button class="exercise-icon" *ngFor="let exercise of user.exercises"
+                            ion-button>{{exercise.name}}</button>
+                </p>
+            </div>
+            <div *ngIf="!isOneLocation" item-right class="location">
+                <p>Studio</p>
+                <img-loader src="{{user.membership.icon | iconUrl}}"></img-loader>
+            </div>
+        </button>
+    </ion-list>
+</content-spinner>

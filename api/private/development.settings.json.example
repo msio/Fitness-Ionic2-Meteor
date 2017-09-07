@@ -1,0 +1,22 @@
+{
+  "facebook": {
+    "appId": "",
+    "secret": "",
+    "graphApiUrl": "https://graph.facebook.com/v2.8/"
+  },
+  "cloudinary": {
+    "cloudName": "",
+    "apiKey": "",
+    "apiSecret": ""
+  },
+  "lagConfig": {
+    "base": {
+      "defaultDelay": 0
+    }
+  },
+  "oneSignal": {
+    "urlNotifications": "https://onesignal.com/api/v1/notifications",
+    "appId": "",
+    "apiKey": ""
+  }
+}

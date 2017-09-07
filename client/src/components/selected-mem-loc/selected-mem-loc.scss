@@ -1,0 +1,25 @@
+selected-mem-loc {
+  .selected-memLoc {
+    .membership-icons {
+      display: flex;
+      align-items: center;
+    }
+    .location {
+      display: flex;
+      align-items: center;
+      span {
+        overflow: hidden;
+        text-overflow: ellipsis;
+        padding-left: 3px;
+        font-size: $header-ios-font-size-description;
+      }
+    }
+    img {
+      margin-right: 7px;
+      width: 30px;
+      //border-radius: 50%;
+      height: 30px;
+      //box-shadow: 3px 0px 6px #888888;
+    }
+  }
+}

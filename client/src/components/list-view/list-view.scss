@@ -1,0 +1,59 @@
+list-view {
+  .item-user-more {
+    height: 100% !important;
+    padding-right: 8px !important;
+  }
+  .item-wrapper {
+    border-bottom: 0.55px solid #c8c7cc;
+  }
+  /*.list-ios .item-block .item-inner {
+    border-right: 5px solid #26db46 !important;
+    padding-right: 3px;
+
+  }
+  */
+}
+
+.item-user {
+  .exercise-icon{
+    font-size: 0.5rem;
+    height: 15px;
+    text-align: center;
+    span{
+      padding: 0;
+    }
+  }
+  &[poked=true] {
+    .item-inner {
+      border-right: 5px solid $poked-color !important;
+      padding-right: 3px !important;
+    }
+  }
+  /* &.item-block .item-inner {
+     padding-right: 0 !important;
+   }*/
+  .thumbnail {
+    img {
+      border-radius: 50%;
+    }
+  }
+  span {
+    padding-left: 5px;
+  }
+  .start-activity {
+    font-size: 1.3rem;
+  }
+  .row {
+    display: flex;
+    align-items: center;
+  }
+  .location {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin-right: 0;
+    img {
+      max-width: 28px;
+    }
+  }
+}

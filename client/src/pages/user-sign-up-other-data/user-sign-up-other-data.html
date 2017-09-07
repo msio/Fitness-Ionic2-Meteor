@@ -1,0 +1,26 @@
+<ion-header>
+    <ion-navbar>
+        <ion-title>Sign Up</ion-title>
+        <ion-buttons end>
+            <button ion-button (click)="signUp()">Done</button>
+        </ion-buttons>
+    </ion-navbar>
+</ion-header>
+
+<ion-content padding-top>
+    <form [formGroup]="otherDataForm">
+        <ion-list *ngIf="isEmail">
+            <ion-item>
+                <ion-input type="email" formControlName="email" spellcheck="false" autocapitalize="off"
+                           placeholder="Email"></ion-input>
+            </ion-item>
+        </ion-list>
+
+        <ion-list *ngIf="isPassword">
+            <ion-item>
+                <ion-input type="password" formControlName="password" spellcheck="false" autocapitalize="off"
+                           placeholder="Password"></ion-input>
+            </ion-item>
+        </ion-list>
+    </form>
+</ion-content>

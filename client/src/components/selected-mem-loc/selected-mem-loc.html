@@ -1,0 +1,12 @@
+<div class="selected-memLoc">
+    <div *ngIf="membership?.locations.length > 1" class="membership-icons">
+        <!--TODO show number of icons depending on width of screen -->
+        <img-loader src="{{membership.membership.icon | iconUrl}}"></img-loader>
+        <span>more Studios</span>
+    </div>
+    <div *ngIf="membership?.locations.length === 1" class="location">
+        <img-loader src="{{membership.membership.icon | iconUrl}}"></img-loader>
+        <span>{{membership.locations[0].address.postalCode}} {{membership.locations[0].address.street}}</span>
+    </div>
+    <span *ngIf="!isDefined(membership)">Select your Gym</span>
+</div>

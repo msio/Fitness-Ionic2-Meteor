@@ -1,0 +1,16 @@
+<ion-header>
+    <ion-navbar>
+        <ion-title>Workouts</ion-title>
+    </ion-navbar>
+</ion-header>
+
+<ion-content padding>
+    <ion-grid text-center class="workout-grid">
+        <ion-row align-items-center justify-content-center *ngFor="let groups of exercises">
+            <ion-col *ngFor="let exercise of groups">
+                <button ion-button [outline]="!exercise.selected"
+                        (click)="exercise.selected = !exercise.selected">{{exercise.name}}</button>
+            </ion-col>
+        </ion-row>
+    </ion-grid>
+</ion-content>

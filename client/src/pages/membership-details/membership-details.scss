@@ -1,0 +1,36 @@
+page-membership-details {
+  .only-membership {
+    height: 1.7em;
+  }
+}
+
+.membership-toolbar {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding-left: 12px;
+  .icon-name {
+    display: flex;
+    align-items: center;
+    img {
+      width: 40px;
+      max-width: 40px;
+    }
+    span {
+      padding-left: 10px;
+      font-size: 1.6rem;
+    }
+  }
+  .icons {
+    display: flex;
+    align-items: center;
+    .more {
+      padding-left: 10px;
+      font-size: 1.3rem;
+    }
+  }
+}
+
+.icon.checkmark {
+  font-size: 3rem !important;
+}

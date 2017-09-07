@@ -1,0 +1,4 @@
+<div *ngIf="isLoading" class="spinner-content">
+    <ion-spinner></ion-spinner>
+</div>
+<ng-content [ngIf]="!isLoading"></ng-content>

@@ -1,0 +1,108 @@
+$font-size-found-user-details-data: 1em;
+$md-section-title-color: #757575;
+
+page-found-user-details {
+
+  .name-age {
+    font-size: 22px;
+    padding-bottom: 10px !important;
+    .name {
+      font-weight: 500;
+    }
+  }
+
+  .bio {
+    width: 100%;
+    line-height: 1.2em;
+  }
+
+  .showAll {
+    display: flex;
+    justify-content: flex-end;
+  }
+
+  .exercise-icon {
+    font-size: 0.5rem;
+    height: 15px;
+    text-align: center;
+    span {
+      padding: 0;
+    }
+  }
+
+  ion-fab {
+    top: 10px;
+    button {
+      width: 35px !important;
+      height: 35px !important;
+    }
+  }
+  .content {
+    background-color: #ffffff;
+  }
+
+  .section-title {
+    padding: 0 15px;
+    //android
+    border-bottom: 1px solid #dedede;
+    padding-bottom: 10px;
+    p {
+      color: $md-section-title-color;
+    }
+
+  }
+
+  .about {
+    padding: 15px 15px;
+    //padding-top: 15px;
+    border-bottom: 1px solid #dedede;
+    font-size: $font-size-found-user-details-data;
+    p {
+      margin: 0;
+    }
+  }
+
+  .footer-button {
+    font-size: $font-size-found-user-details-data;
+    margin: 0;
+    height: 4.6rem;
+  }
+
+  .row-left-right {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 3px 0px;
+
+  }
+  .location {
+    display: flex;
+    align-items: center;
+    .location-icon {
+      img{
+        max-width: 40px;
+      }
+    }
+    .location-name{
+      .name{
+        font-weight: 700;
+      }
+      padding-left: 5px;
+      p{
+        margin:0;
+        color: inherit;
+      }
+    }
+
+  }
+  //ios
+  ion-icon.icon-title {
+    color: $item-ios-paragraph-text-color;
+    font-size: $font-size-found-user-details-data;
+    span {
+      font-family: $font-family-base;
+      padding-left: 3px;
+    }
+  }
+
+}

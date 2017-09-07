@@ -1,0 +1,46 @@
+<ion-header>
+    <ion-navbar>
+        <ion-title>Actvity Start</ion-title>
+    </ion-navbar>
+</ion-header>
+<ion-content>
+    <ion-list>
+        <ion-list-header>{{duration | startActivityTitle}}</ion-list-header>
+        <!--<button ion-item detail-none detail-push (click)="openStartTimePicker()">-->
+        <!--&lt;!&ndash;TODO use activityStartFormat pipe and extend it to format just APP_TIME_FORMAT&ndash;&gt;-->
+        <!--{{ activityStart.from | amDateFormat: APP_TIME_FORMAT}} <span-->
+        <!--[hidden]=!duration> - {{activityStart.to | amDateFormat: APP_TIME_FORMAT}}</span>-->
+        <!--</button>-->
+        <ion-item detail-push>
+            <ion-datetime minuteValues="0,15,30,45" [min]="minActivityStartFrom"
+                          class="from-time"
+                          [displayFormat]=APP_TIME_FORMAT
+                          [(ngModel)]="activityStartFrom" (ionChange)="onChangeDateTime()"></ion-datetime>
+            <div [hidden]="duration === 0" item-content>
+                - {{activityStart.to | amDateFormat: APP_TIME_FORMAT}}
+            </div>
+        </ion-item>
+        <ion-item class="range-label" *ngIf="showTimeDurationRange">
+            <ion-label>{{duration | timeDuration}}</ion-label>
+        </ion-item>
+        <ion-item *ngIf="showTimeDurationRange">
+            <ion-range class="range" min="0" [max]="maxTimeDuration" [step]="timeDurationStep" [(ngModel)]="duration"
+                       (ionChange)="onChangeTimeDuration()"
+                       color="primary"></ion-range>
+        </ion-item>
+    </ion-list>
+    <ion-list>
+        <ion-list-header>On</ion-list-header>
+        <ion-item>
+            {{activityStart.from | amDateFormat: APP_DATE_DAY_FORMAT}}
+        </ion-item>
+        <ion-item>
+            <ion-segment [(ngModel)]="day" (ionChange)="onChangeDay()">
+                <ion-segment-button *ngFor="let d of days" value="{{d}}">
+                    {{(d | amFromUnix) | todayOrTomorrow }}
+                </ion-segment-button>
+            </ion-segment>
+        </ion-item>
+    </ion-list>
+</ion-content>
+

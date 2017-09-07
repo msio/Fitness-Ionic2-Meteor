@@ -1,0 +1,79 @@
+<ion-header>
+    <ion-toolbar>
+        <ion-segment [(ngModel)]="pokeType">
+            <ion-segment-button [value]=POKE_TYPE.POKES (ionSelect)="getPokes()">
+                <div *ngIf="pokesBadgeCount > 0" class="poke-badge segment-badge left-segment-badge"></div>
+                Pokes
+            </ion-segment-button>
+            <ion-segment-button [value]="POKE_TYPE.MATCHES" (ionSelect)="getMatches()">
+                <div *ngIf="matchesBadgeCount > 0" class="poke-badge segment-badge right-segment-badge"></div>
+                Matches
+            </ion-segment-button>
+        </ion-segment>
+    </ion-toolbar>
+</ion-header>
+
+<ion-content>
+    <div [ngSwitch]="pokeType">
+        <ion-list *ngSwitchCase="POKE_TYPE.POKES">
+            <button ion-item class="item-user" *ngFor="let poke of pokes" (click)="goToFoundUserDetails(poke)">
+                <ion-avatar item-left>
+                    <img class="profile-image" [src]="poke.foundUser | userProfilePicture">
+                    <div *ngIf="poke.unseen" class="poke-badge"></div>
+                </ion-avatar>
+                <div>
+                    <h2>{{poke.foundUser.name.firstName}}</h2>
+                    <p class="row">
+                        <ion-icon *ngIf="poke.foundUser.gender === 'male'" ios="ios-male" md="md-male"></ion-icon>
+                        <ion-icon *ngIf="poke.foundUser.gender === 'female'" ios="ios-female"
+                                  md="md-female"></ion-icon>
+                        <span>{{poke.foundUser.age}}</span>
+                    </p>
+                    <p class="start-activity row">
+                        <ion-icon ios="ios-time-outline" md="md-time"></ion-icon>
+                        <!--TODO use pipe-->
+                        <span>{{poke | activityStartFormat: 'user'}}</span>
+                    </p>
+                    <p>
+                        <button class="exercise-icon" *ngFor="let exercise of poke.exercises"
+                                ion-button>{{exercise.name}}</button>
+                    </p>
+                </div>
+                <div item-right class="location">
+                    <p>Studio</p>
+                    <img src="{{poke.membership.icon | iconUrl}}">
+                </div>
+            </button>
+        </ion-list>
+        <ion-list *ngSwitchCase="POKE_TYPE.MATCHES">
+            <button ion-item class="item-user" *ngFor="let poke of matches" (click)="goToFoundUserDetails(poke)">
+                <ion-avatar item-left>
+                    <img class="profile-image" [src]="poke.foundUser | userProfilePicture">
+                    <div *ngIf="poke.unseen" class="poke-badge"></div>
+                </ion-avatar>
+                <div>
+                    <h2>{{poke.foundUser.name.firstName}}</h2>
+                    <p class="row">
+                        <ion-icon *ngIf="poke.foundUser.gender === 'male'" ios="ios-male" md="md-male"></ion-icon>
+                        <ion-icon *ngIf="poke.foundUser.gender === 'female'" ios="ios-female"
+                                  md="md-female"></ion-icon>
+                        <span>{{poke.foundUser.age}}</span>
+                    </p>
+                    <p class="start-activity row">
+                        <ion-icon ios="ios-time-outline" md="md-time"></ion-icon>
+                        <!--TODO use pipe-->
+                        <span>{{poke | activityStartFormat: 'user'}}</span>
+                    </p>
+                    <p>
+                        <button class="exercise-icon" *ngFor="let exercise of poke.exercises"
+                                ion-button>{{exercise.name}}</button>
+                    </p>
+                </div>
+                <div item-right class="location">
+                    <p>Studio</p>
+                    <img src="{{poke.membership.icon | iconUrl}}">
+                </div>
+            </button>
+        </ion-list>
+    </div>
+</ion-content>

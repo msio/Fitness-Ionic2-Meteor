@@ -1,0 +1,24 @@
+<ion-header>
+    <ion-navbar>
+        <ion-title>Memberships</ion-title>
+    </ion-navbar>
+    <ion-toolbar>
+        <button ion-button small round block (click)="findGymNextToYou()">Find Gym next to you</button>
+    </ion-toolbar>
+</ion-header>
+
+<ion-content>
+    <content-spinner [isLoading]="isContentLoading">
+        <ion-list>
+            <button ion-item *ngFor="let membership of memberships" (click)="goToMembershipDetails(membership)">
+                <ion-thumbnail item-left>
+                    <img-loader src="{{membership.icon | iconUrl}}"></img-loader>
+                </ion-thumbnail>
+                {{membership.name}}
+                <ion-icon *ngIf="membership.selected" class="checkmark" item-right ios="ios-checkmark-circle"
+                          md="md-checkmark-circle"
+                          color="primary"></ion-icon>
+            </button>
+        </ion-list>
+    </content-spinner>
+</ion-content>

@@ -1,0 +1,135 @@
+page-messages {
+  $side-content-padding: 10px;
+  $info-font-size: 1.1rem;
+  //TODO IOS color
+  $info-font-color: $item-ios-paragraph-text-color;
+
+  #page-messages-content {
+    background-color: #fff;
+    padding-right: 10px;
+    padding-left: 10px;
+    padding-bottom: 50px;
+    .scroll-content {
+      padding-bottom: 10px;
+    }
+  }
+  .toolbar-title {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    .header-profile-picture {
+      width: 24px;
+      margin-bottom: -4px;
+      margin-right: 5px;
+      img {
+        border-radius: 50%;
+      }
+    }
+  }
+  .toolbar-title-md {
+    margin-right: 45px;
+  }
+
+  .messages-day-group {
+    margin-top: 10px;
+    .datetime {
+      text-align: center;
+      margin-bottom: 3px;
+      span {
+        font-size: $info-font-size;
+        color: $info-font-color;
+      }
+    }
+    .messages {
+      padding-right: $side-content-padding;
+      padding-left: $side-content-padding;
+      .message {
+        margin-bottom: 3px;
+        display: flex;
+        &.message-mine {
+          .message-content {
+            background: #007AFF;
+            color: #fff;
+          }
+          justify-content: flex-end;
+          align-items: flex-end;
+          &.next-message-other {
+            margin-bottom: 10px;
+          }
+        }
+        &.message-other {
+          .message-content {
+            background: #dddddd;
+            color: #000;
+          }
+          &.next-message-mine {
+            margin-bottom: 10px;
+          }
+          .profile-picture {
+            margin-right: 5px;
+            align-self: flex-end;
+            width: 26px;
+            margin-bottom: -3px;
+            img {
+              border-radius: 50%;
+            }
+          }
+        }
+        //move other message createdAt on right side
+        .filler {
+          //flex-grow: 1;
+        }
+        .createdAt {
+          align-self: center;
+          padding-left: 5px;
+          font-size: $info-font-size;
+          color: $info-font-color;
+        }
+        .message-content {
+          padding: 10px;
+          border-radius: 10px;
+          text-align: left;
+          max-width: 220px;
+        }
+        .not-delivered-icon {
+          margin-left: 3px;
+        }
+      }
+      .delivery-status {
+        padding-right: 15px;
+        //margin-bottom: 7px;
+        text-align: right;
+        .spinner {
+          margin-top: 4px;
+          width: 13px;
+          height: 13px;
+        }
+        .status-title {
+          font-size: $info-font-size;
+          color: $info-font-color;
+        }
+      }
+    }
+  }
+
+  .messages-page-footer {
+    padding-left: 7px;
+
+    .message-editor {
+      padding-left: 5px;
+      background: white;
+      border-radius: 5px;
+      .text-input-ios {
+        margin-top: 7px;
+        margin-bottom: 7px;
+        padding: 2px;
+      }
+    }
+
+    .message-editor-button {
+      box-shadow: none;
+      font-size: 17px;
+    }
+  }
+
+}

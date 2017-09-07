@@ -1,0 +1,19 @@
+<ion-header>
+    <ion-navbar>
+        <ion-buttons [hidden]="hideDoneButton" end>
+            <button ion-button icon-only (click)="done()">
+                Done
+            </button>
+        </ion-buttons>
+        <ion-title>About You</ion-title>
+    </ion-navbar>
+
+</ion-header>
+
+<ion-content padding-top>
+    <ion-list>
+        <ion-item>
+            <ion-textarea #textArea [(ngModel)]="about" (focus)="onFocus()" rows="3"></ion-textarea>
+        </ion-item>
+    </ion-list>
+</ion-content>

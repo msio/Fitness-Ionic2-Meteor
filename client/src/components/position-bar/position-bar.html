@@ -1,0 +1,11 @@
+<ion-toolbar class="position-toolbar" color="primary">
+    <div class="position">
+        <ion-icon *ngIf="!currentPositionMode" ios="ios-pin" md="md-pin"></ion-icon>
+        <ion-icon *ngIf="currentPositionMode" class="current-position-icon"
+                  ios="ios-navigate-outline"
+                  md="md-navigate"></ion-icon>
+        <ion-spinner *ngIf="isLoadingPosition" class="position-spinner"
+                     color="white"></ion-spinner>
+        <span *ngIf="!isLoadingPosition">{{positionDescription}}</span>
+    </div>
+</ion-toolbar>

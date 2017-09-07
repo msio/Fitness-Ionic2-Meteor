@@ -1,0 +1,19 @@
+<ion-header>
+    <ion-navbar>
+        <ion-title>Chats</ion-title>
+    </ion-navbar>
+</ion-header>
+
+<ion-content>
+    <ion-list>
+        <button ion-item *ngFor="let chat of chats" (click)="goToMessages(chat)">
+            <ion-avatar item-left>
+                <img src="{{chat.receiver | userProfilePicture}}">
+            </ion-avatar>
+            <h2>{{chat.receiver.firstName}}</h2>
+            <p [class.last-message-extract]="isDefined(chat.unseen) && chat.unseen !== 0">{{chat.lastMessage.content}}</p>
+        </button>
+    </ion-list>
+</ion-content>
+
+

@@ -1,0 +1,59 @@
+
+//custom range styling
+.list {
+  .item.range-label {
+    min-height: 0;
+    .item-inner {
+      border-bottom: none;
+
+      .label {
+        margin-bottom: 4px
+      }
+
+    }
+  }
+  .range-ios.range {
+    padding-top: 0;
+  }
+}
+
+//Android custom range styling
+.list-md {
+  .item-md.item-range {
+    .range-md {
+      padding-top: 0;
+      padding-bottom: 0;
+    }
+  }
+}
+
+
+//IOS status toolbar to warn e.g. if locations services are disabled or network connection is enabled
+.connectivity-status-toolbar {
+  min-height: 30px;
+  .toolbar-title-ios {
+    font-size: 1.5rem;
+    font-weight: normal;
+  }
+  .title-ios {
+    padding: 0 10px 1px;
+  }
+}
+
+//WORKAROUND for google maps
+ion-app._gmaps_cdv_ .nav-decor {
+  background-color: transparent !important;
+}
+
+//disable scrolling in ion-content
+//ios
+.content-ios[no-scroll] .scroll-content {
+  overflow: hidden;
+}
+
+//TODO check if android works
+//android
+.content-md[no-scroll] .scroll-content {
+  overflow: hidden;
+}
+

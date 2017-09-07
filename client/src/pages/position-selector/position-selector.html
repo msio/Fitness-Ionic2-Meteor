@@ -1,0 +1,44 @@
+<ion-header no-border>
+    <ion-navbar>
+        <ion-title></ion-title>
+        <ion-buttons end>
+            <button [disabled]="areLoadingMarkers || areLoadingLocations" ion-button icon-only
+                    (click)="getCurrentPosition(false)">
+                <ion-icon ios="ios-navigate-outline" md="md-navigate"></ion-icon>
+            </button>
+        </ion-buttons>
+    </ion-navbar>
+</ion-header>
+
+<ion-content>
+    <div #map id="map">
+        <ion-toolbar *ngIf="false" #inputSearchbar class="input-searchbar">
+            <ion-searchbar [(ngModel)]=input (ionInput)="onInput()" showCancelButton (ionFocus)="onFocus()"
+                           (ionCancel)="onCancel()"></ion-searchbar>
+        </ion-toolbar>
+        <!--<position-bar *ngIf="!hidePositionBar" [isLoadingPosition]="isLoadingSelectedPosition"-->
+                      <!--[positionDescription]="selectedLocation.description"></position-bar>-->
+    </div>
+</ion-content>
+
+<ion-footer [hidden]="hideFooter" class="radius" #range>
+    <ion-toolbar>
+        <ion-range [(ngModel)]="radius" step="1" min="1"
+                   [max]=MAX_LOCATION_RADIUS color="primary" (ionBlur)="onChangeRadius()"
+                   [disabled]="isUndefined(radius)">
+            <ion-label range-left>
+                <ion-spinner *ngIf="areLoadingLocations && isUndefined(radius)"></ion-spinner>
+                <span *ngIf="isDefined(radius)">{{radius}} km</span>
+            </ion-label>
+            <ion-label *ngIf="areLoadingLocations && isDefined(radius)" range-right>
+                <ion-spinner></ion-spinner>
+            </ion-label>
+        </ion-range>
+        <ion-buttons *ngIf="!areLoadingLocations" end>
+            <button [disabled]="isUndefined(radius)" ion-button icon-only
+                    (click)="openLocationsList()">
+                <ion-icon ios="ios-list" md="md-list"></ion-icon>
+            </button>
+        </ion-buttons>
+    </ion-toolbar>
+</ion-footer>

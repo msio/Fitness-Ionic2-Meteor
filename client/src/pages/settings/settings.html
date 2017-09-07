@@ -1,0 +1,36 @@
+<ion-header>
+    <ion-navbar>
+        <ion-title>Settings</ion-title>
+    </ion-navbar>
+</ion-header>
+
+<ion-content padding-top>
+    <ion-list>
+        <button ion-item (click)="goToUserDetails()">
+            <ion-avatar item-left>
+                <img [src]="user?.profile | userProfilePicture">
+            </ion-avatar>
+            {{user?.profile.firstName}} {{user?.profile.lastName}}
+        </button>
+    </ion-list>
+
+    <ion-list>
+        <ion-list-header>My Position</ion-list-header>
+        <ion-item (click)="goToPositionSelector()">
+            <ion-label>
+                <div class="position-icon-description">
+                    <ion-icon *ngIf="isCurrentPosition" class="current-position-icon" ios="ios-navigate-outline"
+                              md="md-navigate"></ion-icon>
+                    <ion-icon *ngIf="!isCurrentPosition" ios="ios-pin" md="md-pin"></ion-icon>
+                    <span *ngIf="!isCurrentPosition" class="position-description">{{positionDescription}}</span>
+                    <span *ngIf="isCurrentPosition">Current Position</span>
+                </div>
+            </ion-label>
+            <div *ngIf="isSearchingPosition" item-content>
+                <ion-spinner></ion-spinner>
+            </div>
+        </ion-item>
+    </ion-list>
+
+    <button ion-button (click)="logout()" block>Log out</button>
+</ion-content>

@@ -1,0 +1,21 @@
+
+<ion-header>
+    <ion-navbar>
+        <ion-title>Interests</ion-title>
+    </ion-navbar>
+</ion-header>
+<ion-content>
+    <div [hidden]="!notConnected" class="connectivity-status-toolbar">
+        <ion-toolbar color="danger">
+            <ion-title>Not Connected</ion-title>
+        </ion-toolbar>
+    </div>
+    <ion-list>
+        <button ion-item (click)="goToInterest()">
+            <ion-avatar item-left>
+                <img src="assets/fitness.jpg">
+            </ion-avatar>
+            <h2>Fitness</h2>
+        </button>
+    </ion-list>
+</ion-content>

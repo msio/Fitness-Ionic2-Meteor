@@ -1,0 +1,46 @@
+<ion-header>
+    <ion-navbar>
+        <ion-title>Sign Up Personal</ion-title>
+        <ion-buttons end>
+            <button ion-button (click)="next()">Next</button>
+        </ion-buttons>
+    </ion-navbar>
+</ion-header>
+
+<ion-content>
+    <div class="user-picture-container" tappable (click)="setUserPicture()">
+        <div *ngIf="!userData.picture" class="no-user-picture">
+            <div class="icon-text">
+                <ion-icon class="icon" ios="ios-add" md="md-add"></ion-icon>
+                <span>Photo</span>
+            </div>
+        </div>
+        <img *ngIf="userData.picture" class="user-picture" [src]=pictureUrl>
+    </div>
+    <form [formGroup]="personalDataForm">
+        <ion-list *ngIf="!userData.firstName || !userData.lastName">
+            <ion-item *ngIf="!userData.firstName">
+                <ion-input type="text" formControlName="firstName" spellcheck="false" autocapitalize="off"
+                           placeholder="First Name"></ion-input>
+            </ion-item>
+            <ion-item *ngIf="!userData.lastName">
+                <ion-input type="text" formControlName="lastName" spellcheck="false" autocapitalize="off"
+                           placeholder="Last Name"></ion-input>
+            </ion-item>
+        </ion-list>
+        <ion-list *ngIf="!userData.gender || !userData.birthday">
+            <ion-item *ngIf="!userData.gender">
+                <ion-label>Gender</ion-label>
+                <ion-select formControlName="gender">
+                    <ion-option value="female">Female</ion-option>
+                    <ion-option value="male">Male</ion-option>
+                </ion-select>
+            </ion-item>
+            <ion-item *ngIf="!userData.birthday">
+                <ion-label>Birthday</ion-label>
+                <ion-datetime [displayFormat]=APP_DATE_FORMAT [max]=maxDate [min]="minDate"
+                              formControlName="birthday"></ion-datetime>
+            </ion-item>
+        </ion-list>
+    </form>
+</ion-content>

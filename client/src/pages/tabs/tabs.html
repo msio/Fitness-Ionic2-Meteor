@@ -1,0 +1,9 @@
+<ion-tabs #tabs>
+    <ion-tab [root]="tab1Root" tabTitle="Buddies" tabIcon="list-box"></ion-tab>
+    <ion-tab [root]="tab2Root" tabTitle="Matches" tabIcon="contacts" tabBadge="{{matchesBadgeNumber || ''}}"
+             tabBadgeStyle="danger"></ion-tab>
+    <ion-tab [root]="tab3Root" tabTitle="Chats" tabIcon="chatbubbles" tabBadge="{{chatsBadgeNumber || ''}}"
+             tabBadgeStyle="danger"></ion-tab>
+    <ion-tab [root]="tab4Root" tabTitle="Settings" tabIcon="settings"></ion-tab>
+    <!--<ion-tab [root]="tab5Root" tabTitle="Founded" tabIcon="people"></ion-tab>-->
+</ion-tabs>
