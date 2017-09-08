@@ -56,3 +56,4 @@ Lots of people want to train in the gym but they are not enough motivated to rea
  * from root folder `cd client`      
  * `npm run install-all` (installs npm and meteor api dependencies for client (look into meteor-client.config.json) also [here](https://github.com/Urigo/meteor-client-bundler) )
  * `npm start` (runs in browser)
+ * log in with email: john@test.com, password: test1234
