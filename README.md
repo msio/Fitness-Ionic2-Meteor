@@ -1,5 +1,5 @@
 
-[![Build Status](https://travis-ci.org/msio777/ionic-unit-testing-example.svg?branch=master)](https://travis-ci.org/msio777/ionic-unit-testing-example)
+[![Build Status](https://travis-ci.org/msio777/ionic-unit-testing-example.svg?branch=master)](https://travis-ci.org/msio/ionic-unit-testing-example)
 
 # Fitness Ionic2 Meteor App
 
@@ -24,14 +24,14 @@ Lots of people want to train in the gym but they are not enough motivated to rea
 
 ### Android
 
-<span><img src="https://github.com/msio777/Fitness-Ionic2/blob/master/screens/screen1.png" width="300">
-<img src="https://github.com/msio777/Fitness-Ionic2/blob/master/screens/screen2.png" width="300"></span>
+<span><img src="https://github.com/msio/Fitness-Ionic2/blob/master/screens/screen1.png" width="300">
+<img src="https://github.com/msio/Fitness-Ionic2/blob/master/screens/screen2.png" width="300"></span>
 
 ### IOS
 
-<span><img src="https://github.com/msio777/Fitness-Ionic2/blob/master/screens/screen3.png" width="300">
-<img src="https://github.com/msio777/Fitness-Ionic2/blob/master/screens/screen4.png" width="300">
-<img src="https://github.com/msio777/Fitness-Ionic2/blob/master/screens/screen5.png" width="300"></span>
+<span><img src="https://github.com/msio/Fitness-Ionic2/blob/master/screens/screen3.png" width="300">
+<img src="https://github.com/msio/Fitness-Ionic2/blob/master/screens/screen4.png" width="300">
+<img src="https://github.com/msio/Fitness-Ionic2/blob/master/screens/screen5.png" width="300"></span>
 
 ## Prerequisites
 
